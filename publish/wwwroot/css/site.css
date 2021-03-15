@@ -1,0 +1,346 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  font-style: italic;
+  font-size: 28px;
+  color: #de1102 !important;
+  margin-bottom: 12px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: bold;
+  transition: transform 0.2s;
+  margin-right: 40px;
+}
+
+a.navbar-brand:hover {
+  transform: scale(1.2);
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* Typography
+-------------------------------------------------- */
+h1 {
+  color: #de1102;
+  font-size: 70px;
+  font-style: italic;
+}
+
+p, ul li, button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  color: #de1102;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Layout
+-------------------------------------------------- */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fullscreen {
+  width: 100%;
+  height: 75vh;
+}
+
+/* Homepage
+-------------------------------------------------- */
+
+.logo-line-container .expand-left {
+  margin-right: 20px;
+  animation-delay: 0.4s;
+}
+
+.logo-line {
+  height: 7px;
+  background-color: #de1102;
+  width: 100%;
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+  margin-top: -8px;
+  margin-left: 65px;
+  position: relative;
+}
+
+.logo-line::after {
+	border-top: 0 solid transparent;
+	border-left: 0 solid transparent;
+	border-bottom: 45px solid #de1102;
+  right: -30px;
+  bottom: 0px;
+  position: absolute;
+	border-right: 30px solid transparent;
+  content: '';
+}
+
+.anim-expand::before {
+  content: '';
+  animation-duration: 3s;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  left: 0px;
+  right: 0px;
+  position: absolute;
+  top: 0px;
+  background-color: #fff;
+  z-index: 1;
+  animation-name: expand-left;
+  height: 100%;
+}
+
+.anim-expand.expand-right::before {
+  animation-name: expand-right;
+  animation-delay: 0.8s;
+}
+
+@keyframes expand-left {
+  from {right: 0;}
+  to {right: 100%;}
+}
+
+@keyframes expand-right {
+  from {left: 0;}
+  to {left: 100%;}
+}
+
+
+/* Planets
+-------------------------------------------------- */
+
+.planets-view div.planet-card, .planets-view div.add-planet {
+  border-style: solid;
+  padding: 20px;
+  border-width: 1px;
+  border-left-width: 10px;
+  border-radius: 10px;
+}
+
+.planets-view div.planet-card .red-text {
+  color: #de1102;
+  font-weight: bold;
+}
+
+.planets-view div.planet-card .icon-container {
+  display: inline-block;
+  padding: 0px 10px;
+}
+
+.planets-view div.planet-card .icon-container a {
+  padding: 0px 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.planets-view div.planet-card .icon-container a.imperial-icon {
+  padding-bottom: 5px;
+}
+
+.planets-view div.planet-card .icon-container a.scout-icon {
+  padding-bottom: 2px;
+}
+
+.planets-view div.planet-card ul li:hover .icon-container img {
+  filter: brightness(0) invert(1);
+}
+
+.planets-view div.planet-card ul li {
+  padding: 2px 5px;
+}
+
+.planets-view div.planet-card ul li:nth-child(even) {
+  background-color: #d9d9d9;
+}
+
+.planets-view div.planet-card ul li:hover {
+  background-color: #212529;
+  color: #fff;
+}
+
+.planet-card div.planet-visual {
+  min-width: 20px;
+  min-height: 20px;
+  border-radius: 50%;
+  background: rgb(80,177,195);
+  background: -moz-linear-gradient(90deg, rgba(80,177,195,1) 0%, rgba(88,199,219,1) 31%, rgba(56,86,88,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(80,177,195,1) 0%, rgba(88,199,219,1) 31%, rgba(56,86,88,1) 100%);
+  background: linear-gradient(90deg, rgba(80,177,195,1) 0%, rgba(88,199,219,1) 31%, rgba(56,86,88,1) 100%);
+  background-size: cover;
+  animation-name: rotate;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  box-shadow: inset 20px 10px 20px 10px rgb(0 0 0 / 75%), inset -6px 0 12px 4px rgb(255 255 255 / 35%);
+  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+     -webkit-animation-duration: 60s;
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-timing-function: linear;
+}
+
+.library-data-header {
+  margin: 0px;
+}
+
+.universal-world-profile {
+  font-size: 11px;
+  color: gray;
+}
+
+@keyframes rotate {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 610px 0px;
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 610px 0px;
+  }
+}
+
+.planets-view div.add-planet {
+  border-color: #d9d9d9;
+  color: #d9d9d9;
+  border-top-style: dashed;
+  border-bottom-style: dashed;
+  border-right-style: dashed;
+  font-size: 35px;
+  text-align: center;
+  transition: border-color 0.25s;
+  overflow: hidden;
+}
+
+.planets-view div.add-planet a {
+  height: 200px;
+  color: #d9d9d9;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  background-color: #fff;
+  line-height: 200px;
+  border-style: none;
+  transition: color 0.25s, transform 0.3s;
+  display: block;
+}
+
+.planets-view div.add-planet:hover {
+  border-color: gray;
+}
+
+.planets-view div.add-planet:hover a {
+  color: gray;
+  transform: scale(1.4);
+}
+
+.planet-preview {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: #212529;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
+.planet-preview::after {
+  content: "?";
+  color: #fff;
+  font-size: 40px;
+  line-height: 100px;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}

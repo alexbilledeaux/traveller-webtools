@@ -1,0 +1,61 @@
+@model Traveller.Models.Planet
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>REMOVE</h1>
+
+<h3>Are you sure you want to delete this planet?</h3>
+<div class="container">
+    
+    <hr />
+        <div class="row planet-card mt-4">
+            <div class="col-3 flex-center">
+                <div class="planet-visual" style="@Model.Surface_CSS @Model.Size_CSS"></div>
+            </div>
+            <div class="col-7">
+                <ul>
+                    <p class="library-data-header"><b>LIBRARY DATA</b></p>
+                    <p class="universal-world-profile">
+                        <span>// UWP @Model.Title 0101</span>
+                        <span class="uwp-starport-rank">@Model.GetStarportRank()</span><!--
+                        --><span class="uwp-size">@Model.Size.ToString("X")</span><!--
+                        --><span class="uwp-atmosphere">@Model.Atmosphere.ToString("X")</span><!--
+                        --><span class="uwp-hydrology">@Model.Hydrology.ToString("X")</span><!--
+                        --><span class="uwp-population">@Model.Population.ToString("X")</span><!--
+                        --><span class="uwp-government">@Model.Government.ToString("X")</span><!--
+                        --><span class="uwp-law">@Model.Law_Level.ToString("X")</span><!--
+                        --><span>-</span><!--
+                        --><span class="uwp-tl">@Model.Technology_Level</span>
+                    </p>
+                    <li>
+                        <span class="red-text">Name:</span> <b>@Model.Title</b>
+                        <div class="icon-container">
+                            @if(Model.Naval_Base){ <a class="naval-icon" title="Naval Base" data-toggle="tooltip">★</a> }
+                            @if(Model.Scout_Base){ <a class="scout-icon" title="Scout Base" data-toggle="tooltip">▲</a> }
+                            @if(Model.Research_Base){ <a class="research-icon" title="Research Base" data-toggle="tooltip"><img alt="pi" src="/assets/pi-icon.png" /></a> }
+                            @if(Model.TAS_Base){ <a class="TAS-icon" title="TAS Base" data-toggle="tooltip"><img alt="sun" src="/assets/sun-icon.png" /></a> }
+                            @if(Model.Imperial_Base){ <a class="imperial-icon" title="Imperial Consulate" data-toggle="tooltip">■</a> }
+                            @if(Model.Pirate_Base){ <a class="pirate-icon" title="Pirate Base" data-toggle="tooltip"><img alt="skull" src="/assets/skull-icon.png"></a> }
+                        </div>
+                    </li>
+                    <li><span class="red-text">Size:</span> @Model.GetSizeAsKm()</li>
+                    <li><span class="red-text">Surface Gravity:</span> @Model.GetSurfaceGravityAsDouble()</li>
+                    <li><span class="red-text">Atmosphere:</span> @Model.GetAtmosphereDescription()</li>
+                    <li><span class="red-text">Hydrology:</span> @Model.GetHydrologyDescription()</li>
+                    <li><span class="red-text">Population:</span> @Model.GetPopulationDescription()</li>
+                    <li><span class="red-text">Government:</span> @Model.GetGovernmentTitle()</li>
+                    <li><span class="red-text">Landing Restriction:</span> @Model.GetTravellerRestrictions()</li>
+                    <li><span class="red-text">Starport Rank:</span> @Model.GetStarportRank()</li>
+                    <li><span class="red-text">Technology:</span> @Model.GetTechnologyDescription()</li>
+                </ul>
+            </div>
+        </div>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="YES, DELETE!" class="btn btn-danger mr-3" /> |
+        <a class="px-3" asp-action="Index">No, back to List.</a>
+    </form>
+</div>

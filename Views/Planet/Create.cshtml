@@ -1,0 +1,24 @@
+@model Traveller.Models.Planet
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>CREATE</h1>
+
+<h3>Select your method of generation.</h3>
+<hr/>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-3 text-center">
+            <div class="planet-preview"></div>
+        </div>
+        <div class="col-9">
+            <p><b>Standard Generation</b></p>
+            <p>The app currently only supports standard Traveller world creation rules. I plan on adding Space Opera and Hard Science variants in the future!</p>
+            <form asp-action="Create">
+                <input type="submit" value="YES, CREATE!" class="btn btn-dark" />
+            </form>
+        </div>
+    </div>
+</div>

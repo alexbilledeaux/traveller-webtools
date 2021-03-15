@@ -1,0 +1,67 @@
+@model IEnumerable<Traveller.Models.Planet>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container mt-5 planets-view">
+    <div class="row">
+        <div class="col-12">
+            <h1>PLANETS</h1>
+        </div>
+    </div>
+    @foreach (var item in Model) {
+        <div class="row planet-card my-4">
+            <div class="col-3 flex-center">
+                <div class="planet-visual" style="@item.Surface_CSS @item.Size_CSS"></div>
+            </div>
+            <div class="col-7">
+                <ul>
+                    <p class="library-data-header"><b>LIBRARY DATA</b></p>
+                    <p class="universal-world-profile">
+                        <span>// UWP @item.Title 0101</span>
+                        <span class="uwp-starport-rank">@item.GetStarportRank()</span><!--
+                        --><span class="uwp-size">@item.Size.ToString("X")</span><!--
+                        --><span class="uwp-atmosphere">@item.Atmosphere.ToString("X")</span><!--
+                        --><span class="uwp-hydrology">@item.Hydrology.ToString("X")</span><!--
+                        --><span class="uwp-population">@item.Population.ToString("X")</span><!--
+                        --><span class="uwp-government">@item.Government.ToString("X")</span><!--
+                        --><span class="uwp-law">@item.Law_Level.ToString("X")</span><!--
+                        --><span>-</span><!--
+                        --><span class="uwp-tl">@item.Technology_Level</span>
+                    </p>
+                    <li>
+                        <span class="red-text">Name:</span> <b>@item.Title</b>
+                        <div class="icon-container">
+                            @if(item.Naval_Base){ <a class="naval-icon" title="Naval Base" data-toggle="tooltip">★</a> }
+                            @if(item.Scout_Base){ <a class="scout-icon" title="Scout Base" data-toggle="tooltip">▲</a> }
+                            @if(item.Research_Base){ <a class="research-icon" title="Research Base" data-toggle="tooltip"><img alt="pi" src="/assets/pi-icon.png" /></a> }
+                            @if(item.TAS_Base){ <a class="TAS-icon" title="TAS Base" data-toggle="tooltip"><img alt="sun" src="/assets/sun-icon.png" /></a> }
+                            @if(item.Imperial_Base){ <a class="imperial-icon" title="Imperial Consulate" data-toggle="tooltip">■</a> }
+                            @if(item.Pirate_Base){ <a class="pirate-icon" title="Pirate Base" data-toggle="tooltip"><img alt="skull" src="/assets/skull-icon.png"></a> }
+                        </div>
+                    </li>
+                    <li><span class="red-text">Size:</span> @item.GetSizeAsKm()</li>
+                    <li><span class="red-text">Surface Gravity:</span> @item.GetSurfaceGravityAsDouble()</li>
+                    <li><span class="red-text">Atmosphere:</span> @item.GetAtmosphereDescription()</li>
+                    <li><span class="red-text">Hydrology:</span> @item.GetHydrologyDescription()</li>
+                    <li><span class="red-text">Population:</span> @item.GetPopulationDescription()</li>
+                    <li><span class="red-text">Government:</span> @item.GetGovernmentTitle()</li>
+                    <li><span class="red-text">Landing Restriction:</span> @item.GetTravellerRestrictions()</li>
+                    <li><span class="red-text">Starport Rank:</span> @item.GetStarportRank()</li>
+                    <li><span class="red-text">Technology:</span> @item.GetTechnologyDescription()</li>
+                </ul>
+            </div>
+            <div class="col-2 flex-center">
+                @* <button type="button" class="btn btn-light px-3 mb-3">DETAILS</button>
+                <button type="button" class="btn btn-dark">EXPLORE</button> *@
+                <a type="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">DELETE</a>
+            </div>
+        </div>
+    }
+    <div class="row add-planet my-4">
+        <div class="col-12">
+            <a asp-action="Create">+</a>
+        </div>
+    </div>
+</div>
