@@ -29,9 +29,9 @@ namespace Traveller.Models
 
         public string SetSurfaceTexture()
         {
-            List<string> HighHydrologyImages = new List<string>{ "/assets/2k_earth_clouds_blue.jpg", "/assets/2k_earth_clouds_blue_light.jpg", "assets/Ocean_Planet.png" };
-            List<string> MidHydrologyImages = new List<string>{ "/assets/Alpine.png", "/assets/Savannah.png", "/assets/2k_earth_daymap.jpg", "/assets/Tropical.png", "/assets/Terrestrial1.png", "/assets/Terrestrial2.png", "/assets/Terrestrial3.png", "/assets/Terrestrial4.png"};
-            List<string> LowHydrologyImages = new List<string>{ "/assets/2k_ceres_fictional.jpg", "/assets/2k_eris_fictional.jpg", "/assets/2k_moon.jpg", "/assets/2k_haumea_fictional.jpg"};
+            List<string> HighHydrologyImages = new List<string>{ "/assets/2k_earth_clouds_blue-min.jpg", "/assets/2k_earth_clouds_blue_light-min.jpg", "assets/Ocean_Planet-min.png" };
+            List<string> MidHydrologyImages = new List<string>{ "/assets/Alpine-min.png", "/assets/Savannah-min.png", "/assets/2k_earth_daymap-min.jpg", "/assets/Tropical-min.png", "/assets/Terrestrial1-min.png", "/assets/Terrestrial2-min.png", "/assets/Terrestrial3-min.png", "/assets/Terrestrial4-min.png"};
+            List<string> LowHydrologyImages = new List<string>{ "/assets/2k_ceres_fictional-min.jpg", "/assets/2k_eris_fictional-min.jpg", "/assets/2k_moon-min.jpg", "/assets/2k_haumea_fictional-min.jpg"};
 
             // ExoticAtmosphereImages = "/assets/Swamp.png"
             // Change LowHydrology to NoHydrology and create a new list for low.
